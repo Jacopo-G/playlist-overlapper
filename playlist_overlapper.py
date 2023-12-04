@@ -3,8 +3,8 @@
 import re
 
 # absolute/relative path to the playlists
-url1 = "PlaylistOverlap\\Favorites.m3u"
-url2 = "PlaylistOverlap\\Chill.m3u"
+url1 = "Favorites.m3u"
+url2 = "Chill.m3u"
 
 # read the playlists and store the songs in 2 dictionaries
 with open(url1, "r", encoding="utf8") as f:
@@ -33,7 +33,7 @@ for song in songs:
         overlapping_songs[song] = songs[song]
 
 # write the new playlist
-with open("PlaylistOverlap\\overlapping_songs.m3u", "w", encoding="utf8") as f:
+with open("overlapping_songs.m3u", "w", encoding="utf8") as f:
     f.write("#EXTM3U\n")
     for song in overlapping_songs:
         f.write(song + "\n")
